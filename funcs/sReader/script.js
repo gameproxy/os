@@ -140,7 +140,7 @@ $(function() {
             $(document).on("focus", "button:not([data-no-sreader]):not(.menuItem), a.button", function(event) {
                 $(window).one("keyup", function(e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 9) {
+                    if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                         if (sReader.reading) {
                             sReader.playPanTone("button", $(event.target));
 
@@ -157,7 +157,7 @@ $(function() {
             $(document).on("focus", "a:not(.button, .readableButton)", function(event) {
                 $(window).one("keyup", function(e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 9) {
+                    if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                         if (sReader.reading) {
                             sReader.playPanTone("button", $(event.target));
                             
@@ -174,7 +174,7 @@ $(function() {
             $(document).on("focus", "p:not([data-no-sreader])", function(event) {
                 $(window).one("keyup", function(e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 9) {
+                    if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                         if (sReader.reading) {
                             if ($(event.target).attr("data-readable") == undefined) {
                                 sReader.speak(_("Paragraph: ") + $(event.target).text());
@@ -193,7 +193,7 @@ $(function() {
                 $(document).on("focus", "h" + i + ":not([data-no-sreader])", function(event) {
                     $(window).one("keyup", function(e) {
                         var code = (e.keyCode ? e.keyCode : e.which);
-                        if (code == 9) {
+                        if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                             if (sReader.reading) {
                                 if ($(event.target).attr("data-readable") == undefined) {
                                     sReader.speak(_("%-level heading: ", levels[Number($(event.target).get(0).tagName[1]) - 1]) + $(event.target).text());
@@ -228,7 +228,7 @@ $(function() {
             $(document).on("focus", ".readableButton", function(event) {
                 $(window).one("keyup", function(e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 9) {
+                    if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                         if (sReader.reading) {
                             sReader.playPanTone("button", $(document.activeElement));
 
@@ -249,7 +249,7 @@ $(function() {
             $(document).on("focus", ".readableText", function(event) {
                 $(window).one("keyup", function(e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code == 9) {
+                    if (code == 9 || code == 37 || code == 38 || code == 39 || code == 40) {
                         if (sReader.reading) {sReader.speak($(document.activeElement).attr("data-readable"));}
                     }
                 });
@@ -320,14 +320,16 @@ $(function() {
                     event.preventDefault();
 
                     if (event.which == 13) {
+                        var objectPressed = document.activeElement;
+
                         sReader.playTone("enter");
 
-                        sReader.speak(_("Enter: object pressed"));
+                        sReader.speak(_("Object pressed"));
 
                         setTimeout(function() {
                             sReader.skipNextButton = true;
                             
-                            $(document.activeElement).click();
+                            $(objectPressed).click();
 
                             event.stopPropagation();
                         }, 1000);
@@ -340,7 +342,7 @@ $(function() {
                     if (sReader.reading) {
                         sReader.playTone("enter");
 
-                        sReader.speak(_("Enter: object pressed"));
+                        sReader.speak(_("Object pressed"));
                     }
                 } else {
                     sReader.skipNextButton = false;

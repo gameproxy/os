@@ -19,6 +19,7 @@
         <script src="lib/touchpunch.min.js"></script>
         <script src="lib/pizzicato.min.js"></script>
         <script src="lib/caretpos.js"></script>
+        <script src="lib/spatial.js"></script>
         <script src="funcs/ui/script.js"></script>
         <script src="funcs/lang/script.js"></script>
         <script src="lang/overrides.js"></script>
@@ -32,13 +33,53 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <screen name="tests" class="signInBackground" data-readable="tests page">
+        <screen name="tests" data-readable="tests page">
             <main>
                 <h1>Welcome to PlayBox</h1>
                 <p>PlayBox is still in-development.</p>
                 <div class="bootable">
                     <p>Due to the fact that this OS is bootable, please try any of the options below.</p>
                     <button onclick="systemActions.shutdown();">Shutdown</button> <button onclick="systemActions.reboot();">Reboot</button> <button onclick="devOps.updateFromGit();">Update from Git</button>
+                </div>
+                <div>
+                    <p>Here are some demos you can try:</p>
+                    <button onclick="screens.fade('buttonsDemo');">Buttons</button>
+                    <button onclick="screens.fade('alertsDemo');">Alerts</button>
+                </div>
+                <div>
+                    <p>Other features:</p>
+                    <button onclick="sReader.switchState();">Switch on/off subReader (Ctrl+F12)</button>
+                </div>
+            </main>
+        </screen>
+        <screen name="buttonsDemo" data-readable="buttons demo">
+            <main>
+                <h1>Buttons Demo</h1>
+                <button onclick="screens.fade('tests');">Back</button>
+                <div>
+                    <button>A1</button> <button>B1</button> <button>C1</button>
+                </div>
+                <div>
+                    <button>A2</button> <button>B2</button> <button>C2</button>
+                </div>
+                <div>
+                    <button>A3</button> <button>B3</button> <button>C3</button>
+                </div>
+            </main>
+        </screen>
+        <screen name="alertsDemo" data-readable="alerts demo">
+            <main>
+                <h1>Buttons Demo</h1>
+                <button onclick="screens.fade('tests');">Back</button>
+                <div>
+                    <h2>Simple alert</h2>
+                    <p>This is a really simple alert with a title.</p>
+                    <button onclick="alert('This is a simple alert.', 'Demo');">Try it!</button>
+                </div>
+                <div>
+                    <h2>Long alert</h2>
+                    <p>This is an alert with a lot of text.</p>
+                    <button onclick="alert('This is an alert that is intentially made to be long so the alert content scrolls. The alert only shows the first few lines and so a scrollbar will show. It\'s amazing what alerts can do!', 'Demo');">Try it!</button>
                 </div>
             </main>
         </screen>

@@ -18,14 +18,34 @@ function alert(content, title = "Information", buttons = [{text: _("OK"), type: 
 
     $("#alertBackground, #alertBox").fadeIn();
 
-    $("#alertContent").focus();
+    $(".alertContent").focus();
+
+    if ($(".alertContent")[0].scrollHeight > $(".alertContent")[0].clientHeight || $(".alertContent")[0].scrollWidth > $(".alertContent")[0].clientWidth) {
+        $(".alertContent").attr("tabindex", "0");
+        
+        if (!sReader.reading) {
+            $(".alertContent").css("overflow-y", "auto");
+            $(".alertContent").focus();
+        } else {
+            $(".alertContent").css("overflow-y", "hidden");
+        }
+    } else {
+        if (!sReader.reading) {
+            $(".alertContent").attr("tabindex", "-1");
+            $(".alertButtons").find("button:last").focus();
+        } else {
+            $(".alertContent").attr("tabindex", "0");
+        }
+    }
 
     if (sReader.reading) {
         sReader.playTone("alert");
 
         sReader.speak(_("Alert! Press Tab for first item"));
-    } else {
-        $(".alertButtons").find("button:last").focus();
+
+        setTimeout(function() {
+            $(".alertContent").focus();
+        }, 100);
     }
 }
 

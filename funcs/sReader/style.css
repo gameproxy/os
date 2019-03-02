@@ -3,7 +3,7 @@
     position: absolute;
     bottom: 60px;
     left: 40px;
-    width: 500px;
+    width: calc(100vw - 100px);
     height: 110px;
     padding: 10px;
     z-index: 99999;

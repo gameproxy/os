@@ -14,7 +14,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: underline;
 }
 
@@ -44,7 +44,7 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+button:hover, button:focus {
     background-color: var(--uiHoverColour);
 }
 

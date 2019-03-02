@@ -9,16 +9,16 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 ::-webkit-scrollbar-track {
