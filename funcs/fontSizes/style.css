@@ -1,0 +1,27 @@
+* {
+    font-size: 4vh;
+}
+
+h1 {
+    font-size: 6vh;
+}
+
+h1.normal {
+    font-size: 4vh;
+}
+
+h2 {
+    font-size: 5vh;
+}
+
+h3 {
+    font-size: 4vh;
+}
+
+p, div, screen {
+    font-size: 4vh;
+}
+
+button, input {
+    font-size: 4vh;
+}

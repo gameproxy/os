@@ -1,0 +1,33 @@
+html, body {
+    background-color: black;
+    overflow: hidden;
+}
+
+main {
+    margin: 3vw;
+}
+
+div.card {
+    margin: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: var(--backgroundColour);
+    color: var(--textColour);
+}
+
+div.cardContent {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.cardButtons {
+    margin: -10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+}
+
+html[dir="rtl"] div.cardButtons {
+    text-align: left;
+}

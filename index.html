@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PlayBox OS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="lib/jqueryui.css">
+        <link rel="stylesheet" href="font/import.css">
+        <link rel="stylesheet" href="funcs/fontSizes/style.css">
+        <link rel="stylesheet" href="funcs/colours/style.css">
+        <link rel="stylesheet" href="funcs/ui/style.css">
+        <link rel="stylesheet" href="funcs/scrollbars/style.css">
+        <link rel="stylesheet" href="funcs/sReader/style.css">
+        <link rel="stylesheet" href="funcs/screens/style.css">
+        <link rel="stylesheet" href="funcs/alerts/style.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/jqueryui.js"></script>
+        <script src="lib/touchpunch.min.js"></script>
+        <script src="lib/pizzicato.min.js"></script>
+        <script src="lib/caretpos.js"></script>
+        <script src="funcs/ui/script.js"></script>
+        <script src="funcs/lang/script.js"></script>
+        <script src="lang/overrides.js"></script>
+        <script src="funcs/bootableComms/script.js"></script>
+        <script src="funcs/systemActions/script.js"></script>
+        <script src="funcs/devOps/script.js"></script>
+        <script src="funcs/sReader/script.js"></script>
+        <script src="funcs/sReader/tones.js"></script>
+        <script src="funcs/screens/script.js"></script>
+        <script src="funcs/alerts/script.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <screen name="tests" class="signInBackground" data-readable="tests page">
+            <main>
+                <h1>Welcome to PlayBox</h1>
+                <p>PlayBox is still in-development.</p>
+                <div class="bootable">
+                    <p>Due to the fact that this OS is bootable, please try any of the options below.</p>
+                    <button onclick="systemActions.shutdown();">Shutdown</button> <button onclick="systemActions.reboot();">Reboot</button> <button onclick="devOps.updateFromGit();">Update from Git</button>
+                </div>
+            </main>
+        </screen>
+        <div id="alertBackground"></div>
+        <div id="alertBox"></div>
+        <div id="sReader">
+            <div id="sReaderContent"></div>
+        </div>
+        <div>
+            <div id="sReaderBlackout"></div>
+            <style id="sReaderStyle"></style>
+        </div>
+    </body>
+</html>
